@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
 ## Author
-CARLOS KIPKOECH
+CARLOS KIPKOEC
 
 ## Description
 The Quote project is a simple application where a user can add new quotes and can also upvote and downvote the quotes of their like and dislikes respectively.The user can also add and delete the quote.The user can also read through the available quote.
