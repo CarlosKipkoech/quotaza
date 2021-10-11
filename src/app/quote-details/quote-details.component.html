@@ -1,0 +1,27 @@
+<div class="container-fluid row" id="buttons">
+  <div class="col-md-6">
+    <button
+      class="btn btn-sm btn-success"
+      (click)="upvote()"
+      style="margin-right: 10%"
+    >
+      <i class="fa fa-thumbs-up" style="background-color: #4caf50" id="dislike">
+      </i>
+      {{ quoty.upvotes }}
+    </button>
+    <button class="btn btn-sm btn-primary" id="hate" (click)="downvote()">
+      <i
+        class="fa fa-thumbs-down"
+        style="background-color: #1976d2"
+        id="dislike"
+      >
+      </i>
+      {{ quoty.downvotes }}
+    </button>
+  </div>
+  <div class="col-md-6">
+    <button class="btn btn-sm btn-danger" id="del" (click)="deleteQuote(true)">
+      <i class="fa fa-trash" id="delete"></i>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+  rel="stylesheet"
+/>
+<p>Quotaza</p>
+<div class="container-fluid" style="font: size 24px; background-color: #191414">
+  <div class="navigation">
+    <ul>
+      <li><i class="fa fa-home" aria-hidden="true"></i></li>
+      <li><i class="fa fa-edit"></i></li>
+      <li><i class="fa fa-crown"></i></li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <app-quotes-forms (add)="addQuote($event)"></app-quotes-forms>
+    </div>
+    <div class="col-sm-9">
+      <div class="all-cards quote d-block">
+        <div
+          *ngFor="let quote of sortQuotes; let i = index"
+          class="card p-3 mb-3"
+          style="width: 24rem"
+        >
+          <div class="card-body">
+            <h4 class="card-title" appHighlightQoute>
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span
+                style="font-size: 15px; font-weight: bold; padding-left: 3%"
+                >{{ quote.name }}</span
+              >
+            </h4>
+
+            <!-- <p class="card-text" id="param">{{quote.quote}}</p> -->
+            <div id="{{ i }}" class="header">
+              <h5 *ngIf="quote.upvotes !== findMax() || quote.upvotes === 0">
+                <span style="font-size: 23px; font-weight: bold"> "</span
+                >{{ quote.quote }}.
+                <span style="font-size: 23px; font-weight: bold"> "</span>
+              </h5>
+              <div *ngIf="quote.upvotes === findMax() && quote.upvotes > 0">
+                <h5 appHighlight>{{ quote.quote }}</h5>
+              </div>
+            </div>
+
+            <span class="card-subtitle mb-2"
+              ><span style="padding-left: 50%; padding-top: 3%" id="name"
+                >-{{ quote.author }}</span
+              ><span id="date"
+                ><br />
+                <span class="text-muted" id="datecolor">{{
+                  quote.datePosted | date: "short"
+                }}</span></span
+              ></span
+            >
+            <app-quote-details
+              bind-quoty="quote"
+              (isRead)="quoteDelete($event, i)"
+            >
+            </app-quote-details>
+            <!--<button
+              (click)="displayInfo(i)"
+              class="btn btn-info btn-sm"
+              id="quotes-button"
+            >
+              See More
+            </button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

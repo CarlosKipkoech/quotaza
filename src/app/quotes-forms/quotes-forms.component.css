@@ -1,0 +1,29 @@
+p {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 30%;
+}
+.container-fluid {
+  position: fixed;
+  top: 15%;
+
+  width: 350px;
+  border-radius: 10px;
+  right: 2%;
+  background-color: black;
+}
+.heading {
+  padding-top: 2em;
+}
+.form-group {
+  color: white;
+  background-color: black;
+}
+form,
+label {
+  background-color: black;
+}
+.copy {
+  font-size: 15px;
+}

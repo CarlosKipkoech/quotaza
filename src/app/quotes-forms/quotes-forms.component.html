@@ -1,0 +1,102 @@
+<div class="formss">
+  <div class="container-fluid" style="background-color: black">
+    <p class="heading" style="background-color: black">
+      <i class="fas fa-edit" style="background-color: black"></i>Add Quote
+    </p>
+    <!-- <hr> -->
+    <form
+      (ngSubmit)="addQuote(); quotesForm.resetForm({})"
+      #quotesForm="ngForm"
+      style="background-color: black"
+    >
+      <div class="form-group" style="background-color: black">
+        <label for="nae">Your Name</label>
+        <input
+          type="text"
+          required
+          class="form-control"
+          id="name"
+          [(ngModel)]="quoted.name"
+          name="name"
+          #name="ngModel"
+          required
+        />
+        <div
+          style="background-color: black"
+          *ngIf="name.invalid && name.dirty"
+          class="alert alert-danger"
+        >
+          <div>
+            <p class="" style="background-color: black">
+              Your name is required.
+            </p>
+          </div>
+          <div>
+            <p>Name is at least 3 characters long.</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name"></label>
+        <input
+          style="display: none"
+          type="text"
+          required
+          class="form-control"
+          id="title"
+          (ngModel)="(quoted.title)"
+          name="title"
+          #title="ngModel"
+        />
+        <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
+          <div>
+            <p>Title is required.</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Quote</label>
+        <textarea
+          class="form-control"
+          id="quote"
+          rows="2"
+          required
+          [(ngModel)]="quoted.quote"
+          name="quote"
+          #quote="ngModel"
+        ></textarea>
+        <div *ngIf="quote.invalid && quote.dirty" class="alert alert-danger">
+          <div>Quote can not be empty.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Quote Author</label>
+        <input
+          type="text"
+          required
+          class="form-control"
+          id="author"
+          [(ngModel)]="quoted.author"
+          name="author"
+          #author="ngModel"
+        />
+        <div *ngIf="title.invalid && title.dirty" class="alert alert-danger">
+          <div>Author Name is required.</div>
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="btn btn-sm mt-3 mb-3 btn-success"
+        style="margin-left: 30%"
+      >
+        Add Quote
+      </button>
+      <div
+        class="text-center text-muted copy"
+        style="padding-top: 25%; padding-bottom: 3%; background-color: black"
+      >
+        &copy;Copyright 2021
+      </div>
+    </form>
+  </div>
+</div>
