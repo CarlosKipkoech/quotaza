@@ -7,6 +7,8 @@ CARLOS KIPKOEC
 
 ## Description
 The Quote project is a simple application where a user can add new quotes and can also upvote and downvote the quotes of their like and dislikes respectively.The user can also add and delete the quote.The user can also read through the available quote.
+##  Some Screenshots
+![Screenshot from 2021-10-11 15-34](https://user-images.githubusercontent.com/87478982/136791011-8b68c289-2fb8-48a9-874d-d989bf7f9e22.png)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
